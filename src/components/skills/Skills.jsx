@@ -40,7 +40,7 @@ const SkillsC = styled.div`
 `;
 function Skills() {
   return (
-    <SkillSection id="#skills">
+    <SkillSection id="skills">
       <SectionTitle>Skills</SectionTitle>
       <SectionSubtitle>My technical level</SectionSubtitle>
       <SkillsC>

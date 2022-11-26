@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import data from "./data";
+import ServicesModal from "./ServicesModal";
 const ServiceSection = styled.section`
   padding: 6rem 0 2rem;
   background-color: ${(props) => props.theme.Background_color};
@@ -30,23 +31,32 @@ const ServicesC = styled.div`
   column-gap: 1.8rem;
   justify-content: center;
   @media screen and (max-width: 62rem) {
-    grid-template-columns: max-content;
+    grid-template-columns: repeat(3, 218px);
     row-gap: 2rem;
   }
-  @media screen and (max-width: 36rem) {
-    grid-template-columns: 1fr;
+  @media screen and (max-width: 48rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 22rem) {
+    grid-template-columns: max-content;
   }
 `;
 const ServicesContent = styled.div`
   position: relative;
   border: 1px solid ${(props) => props.theme.SubTitle};
   padding: 6rem 0 2rem 2.5rem;
+  @media screen and (max-width: 48em) {
+    padding: 3.5rem 0.5rem 1.25rem 1.5rem;
+  }
 `;
 const Icon = styled.i`
   display: block;
   font-size: 2rem;
   color: ${(props) => props.theme.Description};
   margin-bottom: 1rem;
+  @media screen and (max-width: 48rem) {
+    font-size: 1.5rem;
+  }
 `;
 const Title = styled.h3`
   font-size: 1.25rem;
@@ -56,20 +66,27 @@ const Title = styled.h3`
 `;
 const Button = styled.span`
   color: ${(props) => props.theme.Description};
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  cursor: pointer;
+  &:hover {
+    transform: translateX(0.25rem);
+  }
 `;
-const IconB = styled.i``;
-const ServicesModal = styled.div`
-  display: none;
+const IconB = styled.i`
+  font-size: 1rem;
+  transition: 0.3s;
+  transform: translateX(0.25rem);
 `;
-const ServicesModalC = styled.div``;
-const IconM = styled.i``;
-const TitleM = styled.h3``;
-const DescriptionM = styled.p``;
-const ListServices = styled.ul``;
-const Item = styled.li``;
-const IconI = styled.i``;
-const ItemInfo = styled.p``;
+
 function Services() {
+  const [toggle, setToggle] = useState(true);
+  const [id, setId] = useState(1);
+  const handelToogle = () => {
+    setToggle(!toggle);
+  };
   return (
     <ServiceSection>
       <SectionTitle>Services</SectionTitle>
@@ -85,28 +102,16 @@ function Services() {
                 Designer
               </Title>
             </div>
-            <Button>
+            <Button
+              onClick={() => {
+                setId(item.id);
+                setToggle(!toggle);
+              }}
+            >
               View More
               <IconB className="uil uil-arrow-right"></IconB>
             </Button>
-            <ServicesModal>
-              <ServicesModalC>
-                <IconM className="uil uil-times"></IconM>
-                <TitleM>{item.titleM} Designer</TitleM>
-                <DescriptionM>
-                  Service with more than 3 years of experience.Providing quality
-                  work to clients and companies.
-                </DescriptionM>
-                <ListServices>
-                  {item.list.map((item) => (
-                    <Item key={item.id}>
-                      <IconI className="uil uil-check-circle"></IconI>
-                      <ItemInfo>{item.description}</ItemInfo>
-                    </Item>
-                  ))}
-                </ListServices>
-              </ServicesModalC>
-            </ServicesModal>
+            <ServicesModal show={toggle} id={id} handelToogle={handelToogle} />
           </ServicesContent>
         ))}
       </ServicesC>

@@ -5,4 +5,5 @@ export const colors = {
   Background_color: "hsl(240, 14%, 14%)",
   Background_color2: "hsl(240, 17%, 12%)",
   Link: "hsl(0, 0%, 74%)",
+  Modal: "hsl(240, 14%, 13%)",
 };
