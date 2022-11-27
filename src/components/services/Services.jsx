@@ -88,7 +88,7 @@ function Services() {
     setToggle(!toggle);
   };
   return (
-    <ServiceSection>
+    <ServiceSection id="services">
       <SectionTitle>Services</SectionTitle>
       <SectionSubtitle>What i offer</SectionSubtitle>
       <ServicesC>
