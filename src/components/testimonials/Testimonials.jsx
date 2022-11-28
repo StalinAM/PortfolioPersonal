@@ -70,7 +70,7 @@ const Description = styled.p`
 `;
 function Testimonials() {
   return (
-    <TestimonialSection>
+    <TestimonialSection id="testimonials">
       <SectionTitle>My clients say</SectionTitle>
       <SectionSubtitle>Testimonial</SectionSubtitle>
       <TestimonialC>

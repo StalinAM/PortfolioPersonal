@@ -4,7 +4,7 @@ import Frontend from "./Frontend";
 import { frontend1, frontend2, backend1, backend2 } from "./data";
 const SkillSection = styled.section`
   padding: 6rem 0 2rem;
-  background-color: ${(props) => props.theme.Background_color2};
+  background-color: ${(props) => props.theme.Background_color};
   font-size: 1rem;
   @media screen and (max-width: 48rem) {
     padding: 2rem 1rem 4rem;

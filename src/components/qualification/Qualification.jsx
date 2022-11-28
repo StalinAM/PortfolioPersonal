@@ -5,7 +5,7 @@ import { education, experience } from "./data";
 
 const QualificationSection = styled.section`
   padding: 6rem 0 2rem;
-  background-color: ${(props) => props.theme.Background_color2};
+  background-color: ${(props) => props.theme.Background_color};
   font-size: 1rem;
   @media screen and (max-width: 48rem) {
     padding: 2rem 1rem 4rem;
@@ -36,6 +36,9 @@ const QualificationTabs = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
+  .active {
+    color: ${(props) => props.theme.SubTitle};
+  }
 `;
 const Button = styled.div`
   font-size: 1.25rem;
@@ -53,7 +56,7 @@ const Button = styled.div`
     font-size: 0.9rem;
   }
   .show {
-    color: green ;
+    color: green;
   }
 `;
 const Icon = styled.i`
@@ -77,11 +80,17 @@ function Qualification() {
       <SectionSubtitle>My personel journey</SectionSubtitle>
       <QualificationC>
         <QualificationTabs>
-          <Button onClick={() => setToggle(education)}>
+          <Button
+            className={toggle === education ? "active" : ""}
+            onClick={() => setToggle(education)}
+          >
             <Icon className="uil uil-graduation-cap"></Icon>
             Education
           </Button>
-          <Button onClick={() => setToggle(experience)}>
+          <Button
+            className={toggle === experience ? "active" : ""}
+            onClick={() => setToggle(experience)}
+          >
             <Icon className="uil uil-briefcase-alt"></Icon>
             Experience
           </Button>

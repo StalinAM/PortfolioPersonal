@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HomeSection = styled.section`
-  background-color: ${(props) => props.theme.Background_color2};
+  background-color: ${(props) => props.theme.Background_color};
   padding: 6rem 0 2rem;
   @media screen and (max-width: 48rem) {
     padding: 2rem 0 4rem;
@@ -9,6 +9,6 @@ const HomeSection = styled.section`
 `;
 const AboutSection = styled.section`
   padding: 6rem 0 2rem;
-  background-color: ${(props) => props.theme.Background_color};
+  background-color: ${(props) => props.theme.Background_color2};
 `;
 export { HomeSection, AboutSection };

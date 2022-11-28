@@ -4,7 +4,7 @@ import data from "./data";
 import ServicesModal from "./ServicesModal";
 const ServiceSection = styled.section`
   padding: 6rem 0 2rem;
-  background-color: ${(props) => props.theme.Background_color};
+  background-color: ${(props) => props.theme.Background_color2};
   font-size: 1rem;
   @media screen and (max-width: 48rem) {
     padding: 2rem 1rem 4rem;

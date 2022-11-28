@@ -1,17 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import data from "./data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const HeaderC = styled.header`
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: ${(props) => props.theme.Background_color};
+  background-color: ${(props) => props.theme.Background_color2};
+  box-shadow: ${(props) => (props.box ? `0 -1px 4px black` : "none")};
   @media screen and (max-width: 48rem) {
     top: initial;
     bottom: 0;
+    box-shadow: ${(props) =>
+      props.box ? "0 -1px 4px rgba(0, 0, 0, 0.2)" : "none"};
   }
 `;
 const NavC = styled.nav`
@@ -23,6 +26,7 @@ const NavC = styled.nav`
   column-gap: 1rem;
   margin-left: auto;
   margin-right: auto;
+
   @media screen and (max-width: 62rem) {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
@@ -62,6 +66,11 @@ const List = styled.ul`
   }
   @media screen and (max-width: 22rem) {
     column-gap: 0;
+  }
+`;
+const Item = styled.li`
+  .active {
+    color: ${(props) => props.theme.Title};
   }
 `;
 const Icon = styled.i`
@@ -112,20 +121,33 @@ const IconOpen = styled.i`
   }
 `;
 function Header() {
+  // Background Header
+  const [box, setBox] = useState(false);
+  //   the scroll is displayed when passing 500 vw
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 80 ? setBox(true) : setBox(false);
+    });
+  }, []);
   const [toggle, setToggle] = useState(false);
+  const [active, setActive] = useState(0);
   return (
-    <HeaderC>
+    <HeaderC box={box}>
       <NavC>
         <Logo href="index.html">SVAM</Logo>
         <NavMenu show={toggle}>
           <List>
-            {data.map((item) => (
-              <li key={item.id}>
-                <Link href={item.link}>
+            {data.map((item, index) => (
+              <Item key={item.id}>
+                <Link
+                  className={active === index ? "active" : ""}
+                  onClick={() => setActive(index)}
+                  href={item.link}
+                >
                   <Icon className={`uil uil-${item.icon}`}></Icon>
                   {item.title}
                 </Link>
-              </li>
+              </Item>
             ))}
           </List>
           <IconClose

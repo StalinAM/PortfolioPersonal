@@ -174,17 +174,16 @@ function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_1ws3xds",
-        "template_zslq32f",
-        form.current,
-        "ZD_8FYGrpSoVVUwFY"
-      )
-      e.target.reset()
+    emailjs.sendForm(
+      "service_1ws3xds",
+      "template_zslq32f",
+      form.current,
+      "ZD_8FYGrpSoVVUwFY"
+    );
+    e.target.reset();
   };
   return (
-    <ContactSection>
+    <ContactSection id="contact">
       <SectionTitle>Get in touch</SectionTitle>
       <SectionSubtitle>Contact Me</SectionSubtitle>
       <ContactC>
