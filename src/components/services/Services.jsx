@@ -64,6 +64,10 @@ const Title = styled.h3`
   font-weight: 500;
   color: ${(props) => props.theme.Title};
 `;
+const IconB = styled.i`
+  font-size: 1rem;
+  transition: 0.3s;
+`;
 const Button = styled.span`
   color: ${(props) => props.theme.Description};
   font-size: 0.875rem;
@@ -71,14 +75,9 @@ const Button = styled.span`
   align-items: center;
   column-gap: 0.25rem;
   cursor: pointer;
-  &:hover {
-    transform: translateX(0.25rem);
+  &:hover ${IconB} {
+    transform: translate(0.25rem);
   }
-`;
-const IconB = styled.i`
-  font-size: 1rem;
-  transition: 0.3s;
-  transform: translateX(0.25rem);
 `;
 
 function Services() {

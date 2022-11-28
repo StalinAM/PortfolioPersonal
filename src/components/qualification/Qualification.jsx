@@ -52,6 +52,9 @@ const Button = styled.div`
   @media screen and (max-width: 22rem) {
     font-size: 0.9rem;
   }
+  .show {
+    color: green ;
+  }
 `;
 const Icon = styled.i`
   font-size: 1.8rem;
