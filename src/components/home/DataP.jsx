@@ -53,7 +53,7 @@ const ButtomC = styled.a`
   font-weight: 500;
   color: ${(props) => props.theme.Background_color};
   font-size: 1rem;
-  &:hover{
+  &:hover {
     background-color: ${(props) => props.theme.Link};
   }
 `;

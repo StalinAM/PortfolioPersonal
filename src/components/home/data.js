@@ -1,6 +1,6 @@
 const data = [
-    { id: 1, link: 'https://www.linkedin.com/', icon: 'linkedin' },
-    { id: 2, link: 'https://github.com/', icon: 'github' },
-    { id: 3, link: 'https://github.com/', icon: 'globe' },
+    { id: 1, link: 'https://www.linkedin.com/in/stalin-acurio-915561248/', icon: 'linkedin' },
+    { id: 2, link: 'https://github.com/StalinAM', icon: 'github' },
+    
 ]
 export default data;

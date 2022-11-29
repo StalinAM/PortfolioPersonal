@@ -3,14 +3,8 @@ import Social from "./Social";
 import DataP from "./DataP";
 import styled from "styled-components";
 import homeImg from "../../assets/profile.jpg";
-import { HomeSection, AboutSection } from '../../styles/CarouselSections'
-// const HomeSection = styled.section`
-//   background-color: ${(props) => props.theme.Background_color2};
-//   padding: 6rem 0 2rem;
-//   @media screen and (max-width: 48rem) {
-//     padding: 2rem 0 4rem;
-//   }
-// `;
+import { Section1 } from "../../styles/CarouselSections";
+
 const HomeC = styled.div`
   max-width: 60.5rem;
   margin-left: auto;
@@ -76,7 +70,7 @@ const HomeImg = styled.div`
 `;
 function Home() {
   return (
-    <HomeSection id="home">
+    <Section1 id="home">
       <HomeC>
         <HomeContent>
           <Social />
@@ -84,7 +78,7 @@ function Home() {
           <DataP />
         </HomeContent>
       </HomeC>
-    </HomeSection>
+    </Section1>
   );
 }
 

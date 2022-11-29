@@ -2,26 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import data from "./data";
 import ServicesModal from "./ServicesModal";
-const ServiceSection = styled.section`
-  padding: 6rem 0 2rem;
-  background-color: ${(props) => props.theme.Background_color2};
-  font-size: 1rem;
-  @media screen and (max-width: 48rem) {
-    padding: 2rem 1rem 4rem;
-  }
-`;
-const SectionTitle = styled.h2`
-  font-size: 2.25rem;
-  color: ${(props) => props.theme.Title};
-  text-align: center;
-`;
-const SectionSubtitle = styled.span`
-  display: block;
-  font-size: 0.875rem;
-  margin-bottom: 4rem;
-  text-align: center;
-  color: ${(props) => props.theme.Description};
-`;
+import { Section2, SectionTitle, SectionSubtitle } from '../../styles/CarouselSections'
+
 const ServicesC = styled.div`
   max-width: 60.5rem;
   margin-left: auto;
@@ -87,7 +69,7 @@ function Services() {
     setToggle(!toggle);
   };
   return (
-    <ServiceSection id="services">
+    <Section2 id="services">
       <SectionTitle>Services</SectionTitle>
       <SectionSubtitle>What i offer</SectionSubtitle>
       <ServicesC>
@@ -114,7 +96,7 @@ function Services() {
           </ServicesContent>
         ))}
       </ServicesC>
-    </ServiceSection>
+    </Section2>
   );
 }
 

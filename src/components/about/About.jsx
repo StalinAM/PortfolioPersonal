@@ -3,26 +3,11 @@ import styled from "styled-components";
 import AboutImage from "../../assets/about.jpg";
 import CV from "../../assets/John-Cv.pdf";
 import Info from "./Info";
-
-const AboutSection = styled.section`
-  padding: 6rem 0 2rem;
-  background-color: ${(props) => props.theme.Background_color2};
-  @media screen and (max-width: 48rem) {
-    padding: 2rem 1rem 4rem;
-  }
-`;
-const SectionTitle = styled.h2`
-  font-size: 2.25rem;
-  color: ${(props) => props.theme.Title};
-  text-align: center;
-`;
-const SectionSubtitle = styled.span`
-  display: block;
-  font-size: 0.875rem;
-  margin-bottom: 4rem;
-  text-align: center;
-  color: ${(props) => props.theme.Description};
-`;
+import {
+  Section2,
+  SectionTitle,
+  SectionSubtitle,
+} from "../../styles/CarouselSections";
 const AboutC = styled.div`
   max-width: 60.5rem;
   margin-left: auto;
@@ -77,7 +62,7 @@ const Description = styled.p`
 `;
 function About() {
   return (
-    <AboutSection id="about">
+    <Section2 id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionSubtitle>My introduction</SectionSubtitle>
       <AboutC>
@@ -94,7 +79,7 @@ function About() {
           </ButtomC>
         </AboutData>
       </AboutC>
-    </AboutSection>
+    </Section2>
   );
 }
 

@@ -2,26 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Frontend from "./Frontend";
 import { frontend1, frontend2, backend1, backend2 } from "./data";
-const SkillSection = styled.section`
-  padding: 6rem 0 2rem;
-  background-color: ${(props) => props.theme.Background_color};
-  font-size: 1rem;
-  @media screen and (max-width: 48rem) {
-    padding: 2rem 1rem 4rem;
-  }
-`;
-const SectionTitle = styled.h2`
-  font-size: 2.25rem;
-  color: ${(props) => props.theme.Title};
-  text-align: center;
-`;
-const SectionSubtitle = styled.span`
-  display: block;
-  font-size: 0.875rem;
-  margin-bottom: 4rem;
-  text-align: center;
-  color: ${(props) => props.theme.Description};
-`;
+import { Section1, SectionTitle, SectionSubtitle } from "../../styles/CarouselSections";
+
 const SkillsC = styled.div`
   max-width: 60.5rem;
   margin-left: auto;
@@ -40,7 +22,7 @@ const SkillsC = styled.div`
 `;
 function Skills() {
   return (
-    <SkillSection id="skills">
+    <Section1 id="skills">
       <SectionTitle>Skills</SectionTitle>
       <SectionSubtitle>My technical level</SectionSubtitle>
       <SkillsC>
@@ -49,13 +31,9 @@ function Skills() {
           data1={frontend1}
           data2={frontend2}
         />
-        <Frontend
-          name="Backend Developer"
-          data1={backend1}
-          data2={backend2}
-        />
+        <Frontend name="Backend Developer" data1={backend1} data2={backend2} />
       </SkillsC>
-    </SkillSection>
+    </Section1>
   );
 }
 

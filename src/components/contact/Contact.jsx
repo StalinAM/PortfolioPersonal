@@ -1,28 +1,14 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import data from "./data";
+import {
+  Section2,
+  SectionTitle,
+  SectionSubtitle,
+} from "../../styles/CarouselSections";
 // EMAIL
 import emailjs from "@emailjs/browser";
 
-const ContactSection = styled.section`
-  padding: 6rem 0 2rem;
-  background-color: ${(props) => props.theme.Background_color2};
-  @media screen and (max-width: 48rem) {
-    padding: 2rem 1rem 4rem;
-  }
-`;
-const SectionTitle = styled.h2`
-  font-size: 2.25rem;
-  color: ${(props) => props.theme.Title};
-  text-align: center;
-`;
-const SectionSubtitle = styled.span`
-  display: block;
-  font-size: 0.875rem;
-  margin-bottom: 4rem;
-  text-align: center;
-  color: ${(props) => props.theme.Description};
-`;
 const ContactC = styled.div`
   max-width: 60.5rem;
   margin-left: auto;
@@ -124,7 +110,7 @@ const Tag = styled.label`
 `;
 const Input = styled.input`
   position: absolute;
-
+  color: ${(props) => props.theme.SubTitle};
   top: 0;
   left: 0;
   width: 100%;
@@ -135,6 +121,7 @@ const Input = styled.input`
   border-radius: 0.75rem;
   padding: 1.5rem;
   z-index: 1;
+  font-size: 1rem;
 `;
 const InputProject = styled.textarea`
   position: absolute;
@@ -149,25 +136,26 @@ const InputProject = styled.textarea`
   z-index: 1;
   height: 11rem;
   resize: none;
+  color: ${(props) => props.theme.SubTitle};
+  font-size: 1rem;
 `;
 const ButtomForm = styled.button`
   display: inline-flex;
   align-items: center;
   background-color: ${(props) => props.theme.Title};
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
   border-radius: 1rem;
   font-weight: 500;
   color: ${(props) => props.theme.Background_color};
   font-size: 1rem;
+  font-weight: 500;
   margin-top: 6.5rem;
+  font-family: "Poppins", sans-serif;
   &:hover {
     background-color: ${(props) => props.theme.Link};
   }
 `;
-const IconF = styled.i`
-  font-size: 1rem;
-  margin-left: 3px;
-`;
+
 function Contact() {
   const form = useRef();
 
@@ -183,7 +171,7 @@ function Contact() {
     e.target.reset();
   };
   return (
-    <ContactSection id="contact">
+    <Section2 id="contact">
       <SectionTitle>Get in touch</SectionTitle>
       <SectionSubtitle>Contact Me</SectionSubtitle>
       <ContactC>
@@ -226,13 +214,11 @@ function Contact() {
                 placeholder="Write your project"
               />
             </FormDiv>
-            <ButtomForm href="#contact">
-              Send Message<IconF className="uil uil-arrow-to-bottom"></IconF>
-            </ButtomForm>
+            <ButtomForm href="#contact">Send Message</ButtomForm>
           </FormC>
         </ContactContent>
       </ContactC>
-    </ContactSection>
+    </Section2>
   );
 }
 
