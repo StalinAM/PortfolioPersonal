@@ -57,6 +57,9 @@ const Button = styled.span`
   align-items: center;
   column-gap: 0.25rem;
   cursor: pointer;
+  &:hover {
+    color: ${(props) => props.theme.SubTitle};
+  }
   &:hover ${IconB} {
     transform: translate(0.25rem);
   }

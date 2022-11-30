@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import AboutImage from "../../assets/about.jpg";
+import AboutImage from "../../assets/profile.png";
 import CV from "../../assets/John-Cv.pdf";
 import Info from "./Info";
 import {
@@ -35,6 +35,10 @@ const ButtomC = styled.a`
     background-color: ${(props) => props.theme.Title};
   }
 `;
+const IconB = styled.i`
+  font-size: 1.2rem;
+  margin-left: 3px;
+`;
 const AboutImg = styled.img`
   width: 350px;
   border-radius: 1.5rem;
@@ -60,6 +64,12 @@ const Description = styled.p`
     padding: 0;
   }
 `;
+const SpanText = styled.a`
+  color: ${(props) => props.theme.Title};
+  &:hover {
+    color: ${(props) => props.theme.SubTitle};
+  }
+`;
 function About() {
   return (
     <Section2 id="about">
@@ -68,15 +78,27 @@ function About() {
       <AboutC>
         <AboutImg src={AboutImage} alt="" />
         <AboutData>
-          <Info />
+          {/* <Info /> */}
           <Description>
-            Frontend developer, I create web pages with UI / UX user interface,
-            I have years of experience and many clients are happy with the
-            projects carried out.
+            Hi, I'm <SpanText href="#contact">Stalin</SpanText> and I love
+            creating all kinds of things for the web. My history in technology
+            was when I was a high school student when I wanted to customize my
+            PC, I found several tutorials on the internet where they showed how
+            to do it and I was fascinated by this world.
           </Description>
-          <ButtomC href={CV} download="">
-            Download CV
-          </ButtomC>
+          <Description>
+            For some time I learned several things about Computer Science
+            including programming in languages like C, Java, Python, but a long
+            time ago I discovered my passion for the world of web development
+            and the beauty behind building interactive websites like the ones
+            you will find in <SpanText href="#portfolio">My portfolio</SpanText>
+            . Now I am looking for a developer position so I can learn and
+            polish my skills among professionals.
+          </Description>
+          {/* <ButtomC href={CV} download="">
+            Contact Me!
+            <IconB className="uil uil-file-download-alt"></IconB>
+          </ButtomC> */}
         </AboutData>
       </AboutC>
     </Section2>

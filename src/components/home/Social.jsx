@@ -7,7 +7,7 @@ const HomeSocial = styled.div`
   row-gap: 1rem;
 `;
 const HomeSocialIcon = styled.a`
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: ${(props) => props.theme.Link};
   &:hover{
     color: ${(props) => props.theme.Title}

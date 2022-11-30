@@ -2,18 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import Works from "./Works";
 import {
-  Section2,
+  Section1,
   SectionTitle,
   SectionSubtitle,
 } from "../../styles/CarouselSections";
 
 function Projects() {
   return (
-    <Section2 id="portfolio">
+    <Section1 id="portfolio">
       <SectionTitle>Portfolio</SectionTitle>
       <SectionSubtitle>Most recent work</SectionSubtitle>
       <Works />
-    </Section2>
+    </Section1>
   );
 }
 

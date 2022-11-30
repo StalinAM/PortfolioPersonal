@@ -43,7 +43,7 @@ const Social = styled.div`
   column-gap: 1.25rem;
 `;
 const SocialIcon = styled.a`
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: ${(props) => props.theme.Link};
   padding: 0.4rem;
   border-radius: 0.5rem;
@@ -54,7 +54,7 @@ const SocialIcon = styled.a`
   @media screen and (max-width: 62rem) {
     padding: 0.25rem;
     border-radius: 0.25rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 `;
 const Copy = styled.span`
@@ -83,7 +83,7 @@ function Footer() {
             </SocialIcon>
           ))}
         </Social>
-        <Copy>&#169; Crypticalcoder. All rigths reserved</Copy>
+        <Copy>&#169; SVAM. All rigths reserved</Copy>
       </FooterC>
     </FooterF>
   );

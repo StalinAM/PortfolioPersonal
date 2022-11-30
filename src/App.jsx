@@ -23,9 +23,9 @@ function App() {
           <About />
           <Skills />
           <Services />
-          <Qualification />
+          {/* <Qualification /> */}
           <Projects />
-          <Testimonials />
+          {/* <Testimonials /> */}
           <Contact />
         </main>
         <Footer />

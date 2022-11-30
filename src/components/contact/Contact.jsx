@@ -15,7 +15,8 @@ const ContactC = styled.div`
   margin-right: auto;
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(2, max-content);
+  /* grid-template-columns: repeat(2, max-content); */
+  
   justify-content: center;
   column-gap: 6rem;
   padding-bottom: 3rem;
@@ -103,10 +104,11 @@ const Tag = styled.label`
   top: -0.75rem;
   left: 1.25rem;
   font-size: 0.813rem;
-  padding: 0.25rem;
+  padding: 0 0.25rem;
   z-index: 10;
   color: ${(props) => props.theme.Description};
   background-color: ${(props) => props.theme.Background_color2};
+  border-radius: 0.3rem;
 `;
 const Input = styled.input`
   position: absolute;
@@ -122,6 +124,9 @@ const Input = styled.input`
   padding: 1.5rem;
   z-index: 1;
   font-size: 1rem;
+  @media screen and (max-width: 36rem) {
+    padding: 1rem;
+  }
 `;
 const InputProject = styled.textarea`
   position: absolute;
@@ -143,7 +148,7 @@ const ButtomForm = styled.button`
   display: inline-flex;
   align-items: center;
   background-color: ${(props) => props.theme.Title};
-  padding: 0.8rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 1rem;
   font-weight: 500;
   color: ${(props) => props.theme.Background_color};
@@ -175,7 +180,7 @@ function Contact() {
       <SectionTitle>Get in touch</SectionTitle>
       <SectionSubtitle>Contact Me</SectionSubtitle>
       <ContactC>
-        <ContactContent>
+        {/* <ContactContent>
           <Title>Talk to me</Title>
           <Info>
             {data.map((item) => (
@@ -189,9 +194,9 @@ function Contact() {
               </Card>
             ))}
           </Info>
-        </ContactContent>
+        </ContactContent> */}
         <ContactContent>
-          <Title>Write me your project</Title>
+          <Title>Write me</Title>
           <FormC ref={form} onSubmit={sendEmail}>
             <FormDiv>
               <Tag>Name</Tag>
@@ -206,12 +211,12 @@ function Contact() {
               />
             </FormDiv>
             <FormDiv>
-              <Tag>Project</Tag>
+              <Tag>Message</Tag>
               <InputProject
                 name="project"
                 cols={30}
                 rows={10}
-                placeholder="Write your project"
+                placeholder="Write your massage"
               />
             </FormDiv>
             <ButtomForm href="#contact">Send Message</ButtomForm>

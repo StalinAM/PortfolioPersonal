@@ -2,7 +2,7 @@ import React from "react";
 import Social from "./Social";
 import DataP from "./DataP";
 import styled from "styled-components";
-import homeImg from "../../assets/profile.jpg";
+import homeImg from "../../assets/about.png";
 import { Section1 } from "../../styles/CarouselSections";
 
 const HomeC = styled.div`
@@ -42,6 +42,7 @@ const HomeImg = styled.div`
   width: 300px;
   height: 300px;
   animation: profile__animate 8s ease-in-out infinite 1s;
+  box-shadow: inset 0 0 0 9px rgba(255 255 255 / 30%);
   @keyframes profile__animate {
     0% {
       border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;

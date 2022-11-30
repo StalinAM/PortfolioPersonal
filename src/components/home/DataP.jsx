@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import hand from "../../assets/hand.svg";
 const HomeData = styled.div`
   @media screen and (max-width: 48rem) {
     grid-column: 1/3;
@@ -24,7 +25,7 @@ const Subtitle = styled.h3`
     height: 1px;
     background-color: ${(props) => props.theme.SubTitle};
     left: 0;
-    top: 0.8rem;
+    top: 1.1rem;
   }
   @media screen and (max-width: 62rem) {
     padding-left: 3.75rem;
@@ -57,23 +58,18 @@ const ButtomC = styled.a`
     background-color: ${(props) => props.theme.Link};
   }
 `;
-const IconB = styled.i`
-  font-size: 1rem;
-  margin-left: 3px;
-`;
 function DataP() {
   return (
     <HomeData>
       <Title>Stalin Acurio</Title>
-      <Subtitle>Front End Developer</Subtitle>
+      <Subtitle>
+        <img src={hand} alt="" />
+      </Subtitle>
       <Description>
-        I’m a Front-End Developer located in Poland. I have a serious passion
-        for UI effects, animations and creating intuitive, dynamic user
-        experiences.
+        Hi, I am a Front-End developer and I have a passion for software
+        development.
       </Description>
-      <ButtomC href="#contact">
-        Download CV<IconB className="uil uil-arrow-to-bottom"></IconB>
-      </ButtomC>
+      <ButtomC href="#contact">Contact Me!</ButtomC>
     </HomeData>
   );
 }

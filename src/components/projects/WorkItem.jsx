@@ -39,6 +39,9 @@ const Butoon = styled.a`
   column-gap: 0.25rem;
   cursor: pointer;
   color: ${(props) => props.theme.Description};
+  &:hover {
+    color: ${(props) => props.theme.SubTitle};
+  }
   &:hover ${Arrow} {
     transform: translate(0.25rem);
   }

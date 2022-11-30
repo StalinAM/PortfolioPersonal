@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Frontend from "./Frontend";
-import { frontend1, frontend2, backend1, backend2 } from "./data";
+import SkillBox from "./SkillBox";
+import { frontend, backend } from "./data";
 import { Section1, SectionTitle, SectionSubtitle } from "../../styles/CarouselSections";
 
 const SkillsC = styled.div`
@@ -26,12 +26,11 @@ function Skills() {
       <SectionTitle>Skills</SectionTitle>
       <SectionSubtitle>My technical level</SectionSubtitle>
       <SkillsC>
-        <Frontend
+        <SkillBox
           name="Frontend Developer"
-          data1={frontend1}
-          data2={frontend2}
+          data={frontend}
         />
-        <Frontend name="Backend Developer" data1={backend1} data2={backend2} />
+        <SkillBox name="Others" data={backend} />
       </SkillsC>
     </Section1>
   );
