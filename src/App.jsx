@@ -1,6 +1,6 @@
 import GlobalStyles from "./styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
-import { colors } from "./styles/Theme";
+import Themes from "./styles/Theme";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
@@ -12,14 +12,17 @@ import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import ScrollUp from "./components/scrollup/ScrollUp";
 import Projects from "./components/projects/Projects";
+import { useState } from "react";
 function App() {
+  const [mode, setMode] = useState("dark");
+  console.log(mode);
   return (
     <>
       <GlobalStyles />
-      <ThemeProvider theme={colors}>
+      <ThemeProvider theme={Themes[mode]}>
         <Header />
         <main>
-          <Home />
+          <Home mode={mode} setMode={setMode} />
           <About />
           <Skills />
           <Services />

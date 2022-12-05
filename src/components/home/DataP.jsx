@@ -10,6 +10,7 @@ const Title = styled.h1`
   font-size: 2.75rem;
   margin-bottom: 0.25rem;
   color: ${(props) => props.theme.Title};
+  font-weight: 700;
 `;
 const Subtitle = styled.h3`
   color: ${(props) => props.theme.SubTitle};

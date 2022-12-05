@@ -69,12 +69,13 @@ const HomeImg = styled.div`
     height: 180px;
   }
 `;
-function Home() {
+
+function Home({ mode, setMode }) {
   return (
     <Section1 id="home">
       <HomeC>
         <HomeContent>
-          <Social />
+          <Social mode={mode} setMode={setMode} />
           <HomeImg></HomeImg>
           <DataP />
         </HomeContent>
