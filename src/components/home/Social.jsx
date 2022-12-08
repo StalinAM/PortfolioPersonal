@@ -11,6 +11,7 @@ const IconMode = styled.i`
   color: ${(props) => props.theme.Link};
   font-size: 1.5rem;
   color: ${(props) => props.theme.Link};
+  cursor: pointer;
 `;
 const Line = styled.span`
   position: relative;

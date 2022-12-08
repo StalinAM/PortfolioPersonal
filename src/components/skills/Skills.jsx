@@ -24,7 +24,7 @@ function Skills() {
   return (
     <Section1 id="skills">
       <SectionTitle>Skills</SectionTitle>
-      <SectionSubtitle>My technical level</SectionSubtitle>
+      <SectionSubtitle></SectionSubtitle>
       <SkillsC>
         <SkillBox
           name="Frontend Developer"

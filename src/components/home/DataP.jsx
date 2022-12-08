@@ -62,12 +62,12 @@ const ButtomC = styled.a`
 function DataP() {
   return (
     <HomeData>
-      <Title>Stalin Acurio</Title>
+      <Title>Hi, I'm Stalin</Title>
       <Subtitle>
         <img src={hand} alt="" />
       </Subtitle>
       <Description>
-        Hi, I am a Front-End developer and I have a passion for software
+        I am a Front-End developer and I am passionate about software
         development.
       </Description>
       <ButtomC href="#contact">Contact Me!</ButtomC>

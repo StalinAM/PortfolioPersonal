@@ -140,8 +140,7 @@ function Header() {
             {data.map((item, index) => (
               <Item key={item.id}>
                 <Link
-                  className={active === index ? "active" : ""}
-                  onClick={() => setActive(index)}
+                  
                   href={item.link}
                 >
                   <Icon className={`uil uil-${item.icon}`}></Icon>

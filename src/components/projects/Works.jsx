@@ -52,9 +52,12 @@ const WorkC = styled.div`
   }
 `;
 function Works() {
-  const [listFilter, setListFilter] = useState("all");
+  const [listFilter, setListFilter] = useState("");
   const [active, setActive] = useState(0);
-  const NewArray = projectsData.filter((item) => item.category == listFilter);
+  const NewArray =
+    listFilter == "all"
+      ? projectsData
+      : projectsData.filter((item) => item.category == listFilter);
   return (
     <>
       <WorksFilter>
@@ -72,9 +75,9 @@ function Works() {
         ))}
       </WorksFilter>
       <WorkC>
-        {listFilter == "all"
-          ? projectsData.map((item) => <WorkItem item={item} key={item.id} />)
-          : NewArray.map((item) => <WorkItem item={item} key={item.id} />)}
+        {NewArray.map((item) => (
+          <WorkItem item={item} key={item.id} />
+        ))}
       </WorkC>
     </>
   );
